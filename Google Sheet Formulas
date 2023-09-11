@@ -20,3 +20,7 @@ Sum Unique Items
 
   For Adding Array's of multiple ranges 
   =ArrayFormula(QUERY({Q3:T22;W3:Z22;AC3:AF22;AI3:AL22;AO3:AR22;AU3:AX22;BA3:BD22;BG3:BJ22;BM3:BP22;BS3:BV22;BY3:CB22;CE3:CH22}, "select Col1, Sum(Col2),Sum(Col3),Sum(Col3)/Sum(Col2) where Col1 is not null group by Col1 label Col1 'SKU', Sum(Col2) 'Quantity', Sum(Col3) 'Total Price', Sum(Col3)/Sum(Col2) 'Average Price'"))
+
+Recursive Lambda Example
+
+=let(lamm,lambda(lamm,a,if(a<10,lamm(lamm,a+1),a)),lamm(lamm,1))
