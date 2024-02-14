@@ -5,6 +5,7 @@ Filtering Multiple Ranges For Substring
 Vlookup Nested Ifs
 
 =IFERROR(VLOOKUP(Playground!B19,{10,"Banana";20,"Orange";30,"Grape"},2,False))
+
 For Only Equals
 
 =IFERROR(VLOOKUP(Playground!B19,{10,"Banana";20,"Orange";30,"Grape"},2,True))
@@ -24,3 +25,7 @@ Sum Unique Items
 Recursive Lambda Example
 
 =let(lamm,lambda(lamm,a,if(a<10,lamm(lamm,a+1),a)),lamm(lamm,1))
+
+Find Unichar of all non-letter,non-number,non-quote,non-hyphen characters in string
+
+=UNIQUE(let(letters,REGEXREPLACE(A1, "[a-zA-Z0-9]|['"&Char(34)&"-]",""),map(sequence(LEN(letters)),lambda(a,CODE(mid(letters,a,1))))))
